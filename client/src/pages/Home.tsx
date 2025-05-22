@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
@@ -6,10 +6,14 @@ import About from "@/components/home/About";
 import Skills from "@/components/home/Skills";
 import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
+import Automations from "@/components/home/Automations";
 import Dashboards from "@/components/home/Dashboards";
 import Contact from "@/components/home/Contact";
 
 const Home = () => {
+  // Create refs for all sections to use with intersection observer
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
   useEffect(() => {
     // Add custom CSS for the header clip path
     const style = document.createElement('style');
@@ -37,16 +41,46 @@ const Home = () => {
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
       .bg-gradient {
-        background: linear-gradient(135deg, #0A2342 0%, #1B6CA8 100%);
+        background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
       }
       .dark .bg-gradient {
-        background: linear-gradient(135deg, #111827 0%, #1E3A8A 100%);
+        background: linear-gradient(135deg, #111827 0%, hsl(var(--accent)) 100%);
       }
     `;
     document.head.appendChild(style);
 
+    // Implement scroll-based animations with Intersection Observer API
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15, // Trigger when at least 15% of the element is visible
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    
+    // Observer all elements with section-animate class
+    document.querySelectorAll('.section-animate').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Query and animate other elements with animation classes
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in, .slide-up, .slide-in-left, .slide-in-right, .scale-in, .bounce-in').forEach(el => {
+        el.classList.add('animate-in');
+      });
+    }, 100);
+
     return () => {
       document.head.removeChild(style);
+      observer.disconnect();
     };
   }, []);
 
@@ -58,6 +92,7 @@ const Home = () => {
       <Skills />
       <Experience />
       <Projects />
+      <Automations />
       <Dashboards />
       <Contact />
       <Footer />

@@ -4,6 +4,12 @@ export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      'poppins': ['Poppins', 'sans-serif'],
+      'outfit': ['Outfit', 'sans-serif'],
+      'space-grotesk': ['Space Grotesk', 'sans-serif'],
+      'sans': ['Poppins', 'ui-sans-serif', 'system-ui'],
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
