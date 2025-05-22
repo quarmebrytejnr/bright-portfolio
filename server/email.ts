@@ -56,10 +56,11 @@ ${formData.message}
     };
 
     await sgMail.send(msg);
-    console.log('Contact email sent successfully');
+    console.log('Contact email sent successfully to dogbeykwamebright@gmail.com');
     return true;
   } catch (error) {
     console.error('SendGrid email error:', error);
+    console.error('Error details:', JSON.stringify(error, null, 2));
     return false;
   }
 }
