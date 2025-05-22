@@ -36,20 +36,36 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-        variant: "default"
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
-      
-      form.reset();
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+          variant: "default"
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Message received",
+          description: result.message || "Your message has been received and I'll respond soon.",
+          variant: "default"
+        });
+        form.reset();
+      }
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
-        title: "Error sending message",
-        description: "There was a problem sending your message. Please try again.",
+        title: "Something went wrong",
+        description: "Please try again or contact me directly at dogbeykwamebright@gmail.com",
         variant: "destructive"
       });
     } finally {

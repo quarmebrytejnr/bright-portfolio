@@ -166,7 +166,7 @@ const Automations = () => {
             {automations.map((item, index) => (
               <Card 
                 key={index}
-                className={`overflow-hidden hover-shadow transition-all duration-300 h-full section-animate ${
+                className={`overflow-hidden hover-shadow transition-all duration-300 h-full ${
                   hoveredItem === index ? 'ring-2 ring-secondary ring-opacity-50' : ''
                 }`}
                 onMouseEnter={() => setHoveredItem(index)}
