@@ -2,10 +2,6 @@ import { useState, useEffect } from "react";
 import { ProjectCard } from "@/components/ui/project-card";
 import { ProjectModal } from "@/components/ui/project-modal";
 import { Button } from "@/components/ui/button";
-import dashboard1 from "@/assets/dashboard1.svg";
-import dashboard2 from "@/assets/dashboard2.svg";
-import dashboard3 from "@/assets/dashboard3.svg";
-import dashboard4 from "@/assets/dashboard4.svg";
 
 type ProjectCategory = "all" | "dashboard" | "ml" | "data-engineering";
 
@@ -26,58 +22,16 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "publicis-oneview",
-    title: "Publicis OneView",
-    category: "Dashboard",
-    description: "An end-to-end dashboard consolidating key digital and media metrics across platforms with automated data pipelines.",
-    image: dashboard1,
-    technologies: ["Power BI", "Azure", "Python", "MySQL", "Microsoft Fabric"],
-    details: {
-      fullDescription: "An end-to-end PowerBI dashboard consolidating key digital and media metrics across platforms with automated data pipeline management. This centralized reporting tool provides real-time access to critical KPIs for faster decision-making.",
-      implementation: "Architected a cloud-based infrastructure on Azure, integrating multiple APIs and a MySQL database for efficient data pipeline management. Implemented automated data extraction and consolidation processes using Python and Microsoft Fabric.",
-      impact: "Reduced manual reporting time by 70% for cross-functional teams and improved decision-making efficiency, resulting in a 25% increase in campaign optimization speed.",
-      liveUrl: "#"
-    }
-  },
-  {
     id: "ooh-monitoring",
     title: "OOH Monitoring Dashboard",
     category: "Dashboard",
-    description: "Real-time monitoring dashboard for out-of-home advertising campaigns with geospatial visualization.",
-    image: dashboard3,
-    technologies: ["Power BI", "Geospatial", "ETL"],
+    description: "Real-time monitoring dashboard for out-of-home advertising campaigns with geospatial visualization and performance tracking.",
+    image: "/attached_assets/Screenshot 2024-03-09 014646_1747952668859.png",
+    technologies: ["Power BI", "Geospatial", "ETL", "Campaign Analytics"],
     details: {
-      fullDescription: "A comprehensive real-time monitoring system for out-of-home advertising campaigns with advanced geospatial visualization capabilities.",
-      implementation: "Developed using Power BI with custom geospatial visualizations to track campaign performance across different geographical locations. Implemented automated ETL processes to integrate data from various sources.",
-      impact: "Provided real-time visibility into campaign performance, allowing for immediate optimization and resulting in improved ROI for OOH advertising investments.",
-      liveUrl: "#"
-    }
-  },
-  {
-    id: "revenue-forecast",
-    title: "Revenue Forecast Project",
-    category: "ML Model",
-    description: "Predictive revenue forecasting system using time series analysis that contributed to 5% revenue growth.",
-    image: dashboard2,
-    technologies: ["ARIMA", "Python", "Azure Synapse", "Time Series"],
-    details: {
-      fullDescription: "A cross-functional project to develop and deploy a Machine Learning Model to predict direct revenue, improving financial planning and commercial decision-making.",
-      implementation: "Led a team of 6 Data Analysts, Data Scientists, and Data Engineers to build the forecasting system. Applied regression modeling and time series models like ARIMA, deployed on Azure Synapse.",
-      impact: "Promoted transparency and accountability while helping the FP&A and Commercial teams adequately prepare and improve commercial efforts, subsequently leading to a 5% growth in revenue.",
-      liveUrl: "#"
-    }
-  },
-  {
-    id: "fraud-detection",
-    title: "Fraud Detection Model",
-    category: "ML Model",
-    description: "ML model to identify and flag fraudulent transactions by agents on a digital payment platform, saving $62,500/month.",
-    image: dashboard4,
-    technologies: ["Neural Networks", "Logistic Regression", "Python", "Azure ML"],
-    details: {
-      fullDescription: "A fraud detection model designed to identify and flag fraudulent transactions by agents on the Vodafone Cash digital payment platform, significantly reducing financial losses.",
-      implementation: "Led a team of Data Analysts and Revenue Assurance Specialists to develop the model. Used Neural Networks and Logistic Regression to build the model, which was later deployed as a Power BI embedded dashboard for operational teams.",
-      impact: "Cut monthly expenditure by 30%, resulting in ~$62,500+ savings monthly, and helped improve the services on the platform by reducing fraudulent activities.",
+      fullDescription: "A comprehensive real-time monitoring system for out-of-home advertising campaigns with advanced geospatial visualization capabilities. Features interactive maps showing campaign locations and detailed performance metrics.",
+      implementation: "Developed using Power BI with custom geospatial visualizations to track campaign performance across different geographical locations. Implemented automated ETL processes to integrate data from various sources including location data and campaign metrics.",
+      impact: "Provided real-time visibility into campaign performance, allowing for immediate optimization and resulting in improved ROI for OOH advertising investments. Enabled location-based decision making for campaign placement.",
       liveUrl: "#"
     }
   },
@@ -85,27 +39,69 @@ const projects: Project[] = [
     id: "digital-performance",
     title: "Digital Performance Dashboard",
     category: "Dashboard",
-    description: "Comprehensive dashboard integrating data from Meta and YouTube to track campaign performance metrics.",
-    image: dashboard1,
-    technologies: ["Power BI", "Meta API", "YouTube API", "Python"],
+    description: "Comprehensive dashboard integrating data from Meta and YouTube to track campaign performance metrics and engagement.",
+    image: "/attached_assets/Screenshot 2024-03-09 015200_1747952680482.png",
+    technologies: ["Power BI", "Meta API", "YouTube API", "Python", "Social Analytics"],
     details: {
-      fullDescription: "A comprehensive dashboard solution that integrates data from Meta and YouTube to provide a holistic view of digital campaign performance metrics.",
-      implementation: "Utilized Google Analytics API and Python for efficient data extraction, implementing batch processing for large dataset management. Built custom connectors to Meta and YouTube APIs for real-time data ingestion.",
-      impact: "Enabled marketers to make data-driven decisions by providing consolidated metrics from multiple platforms in a single view, improving campaign performance and ROI.",
+      fullDescription: "A comprehensive dashboard solution that integrates data from Meta and YouTube to provide a holistic view of digital campaign performance metrics including reach, engagement, and video views.",
+      implementation: "Utilized Meta and YouTube APIs with Python for efficient data extraction, implementing batch processing for large dataset management. Built custom connectors for real-time data ingestion and automated reporting.",
+      impact: "Enabled marketers to make data-driven decisions by providing consolidated metrics from multiple platforms in a single view, improving campaign performance and ROI by 25%.",
       liveUrl: "#"
     }
   },
   {
-    id: "afriqom-databoard",
-    title: "Afriqom Databoard",
-    category: "Data Engineering",
-    description: "Enterprise Data Analytics SaaS for real-time tracking of agricultural products across the supply chain.",
-    image: dashboard4,
-    technologies: ["SaaS", "Real-time Analytics", "Azure", "Power BI"],
+    id: "brand-social-listening",
+    title: "Brand Social Listening Dashboard",
+    category: "Dashboard",
+    description: "AI-powered social listening dashboard tracking brand sentiment, engagement metrics, and competitive analysis.",
+    image: "/attached_assets/Screenshot 2024-03-09 015402_1747952689286.png",
+    technologies: ["Power BI", "Sentiment Analysis", "Social APIs", "NLP", "Competitive Intelligence"],
     details: {
-      fullDescription: "An Enterprise Data Analytics Software as a Service platform designed for real-time tracking of agricultural products across the supply chain, providing valuable insights for agribusinesses.",
-      implementation: "Developed a cloud-based infrastructure using Azure services for data processing and storage. Implemented real-time analytics capabilities with streaming data processing for up-to-the-minute insights.",
-      impact: "Enabled agricultural businesses to make informed decisions based on real-time data, optimizing supply chain operations and reducing waste.",
+      fullDescription: "An intelligent social listening platform that monitors brand mentions, sentiment analysis, and competitive positioning across social media platforms with advanced analytics and insights.",
+      implementation: "Integrated multiple social media APIs with advanced sentiment analysis using NLP techniques. Built automated data pipelines to collect, process, and visualize social media mentions and engagement metrics.",
+      impact: "Provided real-time brand health monitoring, enabling proactive reputation management and strategic decision-making. Improved response time to brand mentions by 80%.",
+      liveUrl: "#"
+    }
+  },
+  {
+    id: "employee-timesheet",
+    title: "Employee Timesheet Analysis",
+    category: "Dashboard",
+    description: "Comprehensive workforce analytics dashboard tracking employee productivity, target achievement, and resource utilization.",
+    image: "/attached_assets/Screenshot 2025-04-14 171258_1747952875787.png",
+    technologies: ["Power BI", "HR Analytics", "KPI Tracking", "Resource Management"],
+    details: {
+      fullDescription: "A detailed workforce analytics platform providing insights into employee productivity, target achievement rates, and resource utilization across different departments and projects.",
+      implementation: "Developed comprehensive timesheet tracking system with automated data collection from multiple sources. Created advanced visualizations for target tracking, productivity analysis, and resource optimization.",
+      impact: "Improved workforce productivity visibility by 90%, enabled better resource allocation decisions, and helped achieve 61.17% target completion rate across 65 employees.",
+      liveUrl: "#"
+    }
+  },
+  {
+    id: "afriqom-enterprise-saas",
+    title: "Enterprise Data Analytics SaaS Platform",
+    category: "Data Engineering",
+    description: "Comprehensive enterprise-grade SaaS platform built with Power BI for multi-client data analytics and reporting.",
+    image: "/attached_assets/Screenshot 2025-04-20 151059_1747952962052.png",
+    technologies: ["Power BI", "SaaS Architecture", "Multi-tenant", "Azure", "Enterprise Analytics"],
+    details: {
+      fullDescription: "A sophisticated enterprise-grade SaaS platform providing comprehensive data analytics capabilities for multiple clients with customizable dashboards and advanced reporting features.",
+      implementation: "Architected a scalable multi-tenant SaaS solution using Power BI and Azure infrastructure. Implemented automated data pipelines, custom visualizations, and client-specific reporting capabilities.",
+      impact: "Enabled multiple enterprises to access advanced analytics capabilities without infrastructure investment. Reduced reporting time by 75% and improved decision-making across client organizations.",
+      liveUrl: "#"
+    }
+  },
+  {
+    id: "afriqom-agri-tracking",
+    title: "Afriqom Agri Products Tracking",
+    category: "Data Engineering",
+    description: "Real-time tracking system for agricultural products across the supply chain with global market analytics.",
+    image: "/attached_assets/Screenshot 2025-04-20 151929_1747952966262.png",
+    technologies: ["Power BI", "Supply Chain Analytics", "Real-time Tracking", "IoT Integration", "Global Markets"],
+    details: {
+      fullDescription: "An advanced agricultural supply chain tracking system providing real-time visibility into product movement, quality metrics, and global market conditions for agricultural products.",
+      implementation: "Developed a comprehensive tracking system integrating IoT sensors, GPS tracking, and market data APIs. Created real-time dashboards for supply chain visibility and predictive analytics for market trends.",
+      impact: "Revolutionized agricultural supply chain transparency, reduced product losses by 30%, and enabled data-driven pricing decisions based on real-time market conditions.",
       liveUrl: "#"
     }
   }

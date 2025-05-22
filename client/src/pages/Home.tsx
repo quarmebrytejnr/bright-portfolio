@@ -7,7 +7,6 @@ import Skills from "@/components/home/Skills";
 import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
 import Automations from "@/components/home/Automations";
-import Dashboards from "@/components/home/Dashboards";
 import Contact from "@/components/home/Contact";
 
 const Home = () => {
@@ -93,7 +92,6 @@ const Home = () => {
       <Experience />
       <Projects />
       <Automations />
-      <Dashboards />
       <Contact />
       <Footer />
     </div>
