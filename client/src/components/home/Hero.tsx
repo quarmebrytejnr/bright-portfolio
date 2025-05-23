@@ -86,11 +86,11 @@ const Hero = () => {
                 <Github className="h-6 w-6" />
               </a>
               <a 
-                href="/attached_assets/Bright Kwame Dogbey Analytics Engineer CV.pdf" 
+                href="https://docs.google.com/document/d/1wLWSm4O-mMlhA_8FqXxRxvSd_rf007Cg/edit?usp=sharing&ouid=114277319185640357044&rtpof=true&sd=true" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-secondary transition-colors"
-                aria-label="Download CV"
+                aria-label="View CV"
               >
                 <FileText className="h-6 w-6" />
               </a>
