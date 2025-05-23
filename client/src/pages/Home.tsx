@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
+import Brands from "@/components/home/Brands";
 import About from "@/components/home/About";
 import Skills from "@/components/home/Skills";
 import Experience from "@/components/home/Experience";
@@ -87,6 +88,7 @@ const Home = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900 text-dark dark:text-gray-100">
       <Navbar />
       <Hero />
+      <Brands />
       <About />
       <Skills />
       <Experience />
