@@ -100,7 +100,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl hover-shadow overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/40 to-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <img
-                src="/attached_assets/image_1747916296923.png"
+                src="/image_1747916296923.png"
                 alt="Bright Kwame Dogbey"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
