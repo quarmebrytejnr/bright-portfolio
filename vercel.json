@@ -3,14 +3,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "functions": {
-    "server/index.ts": {
-      "includeFiles": ["attached_assets/**"]
+    "api/server.js": {
+      "src": "server/index.ts"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/api/server.js"
     },
     {
       "src": "/attached_assets/(.*)",
