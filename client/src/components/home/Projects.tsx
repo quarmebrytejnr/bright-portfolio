@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "OOH Monitoring Dashboard",
     category: "Dashboard",
     description: "Real-time monitoring dashboard for out-of-home advertising campaigns with geospatial visualization and performance tracking.",
-    image: "/Screenshot_2024-03-09_014646_1747952668859.png",
+    image: "/Screenshot 2024-03-09 014646_1747952668859.png",
     technologies: ["Power BI", "Geospatial", "ETL", "Campaign Analytics"],
     details: {
       fullDescription: "A comprehensive real-time monitoring system for out-of-home advertising campaigns with advanced geospatial visualization capabilities. Features interactive maps showing campaign locations and detailed performance metrics.",
@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: "Digital Performance Dashboard",
     category: "Dashboard",
     description: "Comprehensive dashboard integrating data from Meta and YouTube to track campaign performance metrics and engagement.",
-    image: "/attached_assets/Screenshot 2024-03-09 015200_1747952680482.png",
+    image: "/Screenshot 2024-03-09 015200_1747952680482.png",
     technologies: ["Power BI", "Meta API", "YouTube API", "Python", "Social Analytics"],
     details: {
       fullDescription: "A comprehensive dashboard solution that integrates data from Meta and YouTube to provide a holistic view of digital campaign performance metrics including reach, engagement, and video views.",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     title: "Brand Social Listening Dashboard",
     category: "Dashboard",
     description: "AI-powered social listening dashboard tracking brand sentiment, engagement metrics, and competitive analysis.",
-    image: "/attached_assets/Screenshot 2024-03-09 015402_1747952689286.png",
+    image: "/Screenshot 2024-03-09 015402_1747952689286.png",
     technologies: ["Power BI", "Sentiment Analysis", "Social APIs", "NLP", "Competitive Intelligence"],
     details: {
       fullDescription: "An intelligent social listening platform that monitors brand mentions, sentiment analysis, and competitive positioning across social media platforms with advanced analytics and insights.",
@@ -68,7 +68,7 @@ const projects: Project[] = [
     title: "Employee Timesheet Analysis",
     category: "Dashboard",
     description: "Comprehensive workforce analytics dashboard tracking employee productivity, target achievement, and resource utilization.",
-    image: "/attached_assets/Screenshot 2025-04-14 171258_1747952875787.png",
+    image: "/Screenshot 2025-04-14 171258_1747952875787.png",
     technologies: ["Power BI", "HR Analytics", "KPI Tracking", "Resource Management"],
     details: {
       fullDescription: "A detailed workforce analytics platform providing insights into employee productivity, target achievement rates, and resource utilization across different departments and projects.",
@@ -82,7 +82,7 @@ const projects: Project[] = [
     title: "Enterprise Data Analytics SaaS Platform",
     category: "Data Engineering",
     description: "Comprehensive enterprise-grade SaaS platform built with Power BI for multi-client data analytics and reporting.",
-    image: "/attached_assets/Screenshot 2025-04-20 151059_1747952962052.png",
+    image: "/Screenshot 2025-04-20 151059_1747952962052.png",
     technologies: ["Power BI", "SaaS Architecture", "Multi-tenant", "Azure", "Enterprise Analytics"],
     details: {
       fullDescription: "A sophisticated enterprise-grade SaaS platform providing comprehensive data analytics capabilities for multiple clients with customizable dashboards and advanced reporting features.",
@@ -96,7 +96,7 @@ const projects: Project[] = [
     title: "Afriqom Agri Products Tracking",
     category: "Data Engineering",
     description: "Real-time tracking system for agricultural products across the supply chain with global market analytics.",
-    image: "/attached_assets/Screenshot 2025-04-20 151929_1747952966262.png",
+    image: "/Screenshot 2025-04-20 151929_1747952966262.png",
     technologies: ["Power BI", "Supply Chain Analytics", "Real-time Tracking", "IoT Integration", "Global Markets"],
     details: {
       fullDescription: "An advanced agricultural supply chain tracking system providing real-time visibility into product movement, quality metrics, and global market conditions for agricultural products.",
