@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "OOH Monitoring Dashboard",
     category: "Dashboard",
     description: "Real-time monitoring dashboard for out-of-home advertising campaigns with geospatial visualization and performance tracking.",
-    image: "/attached_assets/Screenshot 2024-03-09 014646_1747952668859.png",
+    image: "/Screenshot_2024-03-09_014646_1747952668859.png",
     technologies: ["Power BI", "Geospatial", "ETL", "Campaign Analytics"],
     details: {
       fullDescription: "A comprehensive real-time monitoring system for out-of-home advertising campaigns with advanced geospatial visualization capabilities. Features interactive maps showing campaign locations and detailed performance metrics.",
