@@ -35,42 +35,17 @@ const Contact = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        toast({
-          title: "Message sent successfully!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
-          variant: "default"
-        });
-        form.reset();
-      } else {
-        toast({
-          title: "Message received",
-          description: result.message || "Your message has been received and I'll respond soon.",
-          variant: "default"
-        });
-        form.reset();
-      }
-    } catch (error) {
-      console.error('Contact form error:', error);
-      toast({
-        title: "Something went wrong",
-        description: "Please try again or contact me directly at dogbeykwamebright@gmail.com",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    toast({
+      title: "Thank you for your message!",
+      description: "Please email me directly at dogbeykwamebright@gmail.com for the fastest response.",
+      variant: "default"
+    });
+    
+    form.reset();
+    setIsSubmitting(false);
   };
   
   return (
@@ -82,6 +57,14 @@ const Contact = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Let's discuss how my data expertise can help solve your business challenges.
           </p>
+          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg max-w-2xl mx-auto">
+            <p className="text-blue-700 dark:text-blue-300 text-center">
+              <strong>📧 For fastest response:</strong> Email me directly at{" "}
+              <a href="mailto:dogbeykwamebright@gmail.com" className="underline font-semibold hover:text-blue-800 dark:hover:text-blue-200">
+                dogbeykwamebright@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
         
         <Card className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden md:flex">
